@@ -46,6 +46,9 @@ with all sufficient information, see the ChangeLog file.
 
 === Library updates (outstanding ones only)
 
+* net/http
+  * SNI (Server Name Indication) supported for HTTPS. 
+
 * new library
 
   * securerandom
