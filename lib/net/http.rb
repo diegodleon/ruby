@@ -583,6 +583,8 @@ module Net   #:nodoc:
           @socket.writeline ''
           HTTPResponse.read_new(@socket).value
         end
+        # Server Name Indication (SNI) RFC 3546
+        s.hostname = @address if s.respond_to? :hostname=
         s.connect
         if @ssl_context.verify_mode != OpenSSL::SSL::VERIFY_NONE
           s.post_connection_check(@address)

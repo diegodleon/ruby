@@ -1,3 +1,12 @@
+Fri Dec 21 19:44:58 2018  De Leon, Diego  <bubooal@gmail.com>
+    * Backport from Ruby 1_9_3
+    * lib/net/http.rb (Net::HTTP#connect): support SNI (Server Name Indication) for HTTPS.  [ruby-dev:43164]
+	  http://stackoverflow.com/questions/4685736/openssl-server-name-indication-support-in-ruby
+	* ext/openssl/ossl_ssl.c: Server Name Indication support.
+	  new methods SSLContext#server_name_cb=, SSLSocket#hostname=.
+
+	* test/openssl/test_ssl.rb: Tests for above.
+
 Tue Jan 28 03:59:15 2014  NARUSE, Yui  <naruse@ruby-lang.org>
 
 	* configure.in: define USE_BUILTIN_FRAME_ADDRESS on x86_64
